@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StockFlow — управление складом</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; background: #f4f6fa; color: #172033; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header { padding: 24px max(24px, calc((100% - 1080px) / 2)); background: #172b4d; color: white; }
+    header p { margin: 6px 0 0; color: #d6e2f5; }
+    main { max-width: 1080px; margin: 32px auto; padding: 0 20px; }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .card { background: white; border: 1px solid #e1e6ef; border-radius: 10px; padding: 18px; }
+    .value { display: block; margin-top: 8px; font-size: 26px; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid #e8edf4; }
+    th { background: #eaf0f8; }
+    .status { color: #176b43; font-weight: 700; }
+    footer { max-width: 1080px; margin: 24px auto; padding: 0 20px; color: #657187; font-size: 13px; }
+    @media (max-width: 700px) { .summary { grid-template-columns: 1fr; } main { margin-top: 20px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>StockFlow</h1>
+    <p>Демонстрационный интерфейс системы управления складом интернет-магазина</p>
+  </header>
+  <main>
+    <section class="summary" aria-label="Сводка склада">
+      <article class="card"><span>Товарных позиций</span><span class="value">128</span></article>
+      <article class="card"><span>Единиц на складе</span><span class="value">4 820</span></article>
+      <article class="card"><span>Ожидают отгрузки</span><span class="value">36</span></article>
+    </section>
+    <section>
+      <h2>Складские остатки</h2>
+      <table>
+        <thead>
+          <tr><th>Артикул</th><th>Наименование</th><th>Всего</th><th>Резерв</th><th>Доступно</th><th>Статус</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SKU-1001</td><td>Беспроводная мышь</td><td>120</td><td>18</td><td>102</td><td class="status">В наличии</td></tr>
+          <tr><td>SKU-1002</td><td>Клавиатура механическая</td><td>64</td><td>12</td><td>52</td><td class="status">В наличии</td></tr>
+          <tr><td>SKU-1003</td><td>Монитор 27 дюймов</td><td>15</td><td>13</td><td>2</td><td>Низкий остаток</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer>StockFlow · Учебный демонстрационный проект для проверки CI/CD в Jenkins</footer>
+</body>
+</html>
